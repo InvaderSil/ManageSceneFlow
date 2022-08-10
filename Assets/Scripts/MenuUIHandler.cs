@@ -30,10 +30,15 @@ public class MenuUIHandler : MonoBehaviour
     public void StartGame()
     {
 
-        PlayerDataManager.Instance.CurrentPlayerName = _nameTextArea.text;
+        PlayerDataManager.Instance.SetCurrentPlayer(_nameTextArea.text);
         SceneManager.LoadScene(1);
     }
 
+    public void ClearData()
+    {
+        PlayerDataManager.Instance.ClearBestData();
+        SetPlayerStats();
+    }
     
 
     public void QuitGame()

@@ -28,6 +28,23 @@ public class PlayerDataManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void SetCurrentPlayer(string playerName)
+    {
+        if(string.IsNullOrWhiteSpace(playerName) || CurrentPlayerName == playerName)
+        {
+            return;
+        }
+        CurrentPlayerName = playerName;
+
+    }
+
+    public void ClearBestData()
+    {
+        BestScore = 0;
+        BestPlayerName = string.Empty;
+        SaveData();
+    }
+
     public void SetBestScore(int score)
     {
         BestScore = score;

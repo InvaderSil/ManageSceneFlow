@@ -74,6 +74,11 @@ public class MainManager : MonoBehaviour
                 SavePlayerData();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+            else if(Input.GetKeyDown(KeyCode.Q))
+            {
+                SavePlayerData();
+                SceneManager.LoadScene(0);
+            }
         }
     }
 
